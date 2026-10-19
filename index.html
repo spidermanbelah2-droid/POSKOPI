@@ -309,7 +309,7 @@
 
     </main>
 
-  <!-- Login Modal (Role Selection) -->
+    <!-- Modals -->
     <div id="login-modal" class="fixed inset-0 bg-stone-900/90 backdrop-blur-md flex items-center justify-center p-4 z-[9999]">
         <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full overflow-hidden p-6 text-center space-y-4 border border-stone-100 relative z-[10000]">
             <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mx-auto text-xl shadow-inner">
@@ -755,40 +755,4 @@
         window.transactions = JSON.parse(localStorage.getItem('savelle_transactions')) || [];
         window.financeRecords = JSON.parse(localStorage.getItem('savelle_finance')) || [];
         window.cart = [];
-        window.currentCategory = 'all';
-        window.paymentMethod = 'Tunai';
-        window.currentReportFilter = 'today';
-        window.lastSuccessfulReceipt = null;
-        window.currentUserRole = localStorage.getItem('savelle_coffee_pos_role') || null;
-
-        window.showCustomAlert = function(message) {
-            const modal = document.getElementById('custom-alert-modal');
-            const msgEl = document.getElementById('custom-alert-message');
-            if(msgEl) msgEl.innerText = message;
-            if(modal) {
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-            }
-        };
-
-        window.closeCustomAlert = function() {
-            const modal = document.getElementById('custom-alert-modal');
-            if(modal) {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
-        };
-
-        async function initFirebaseSync() {
-            try {
-                if (firebaseConfig && firebaseConfig.projectId) {
-                    const app = initializeApp(firebaseConfig);
-                    db = getFirestore(app);
-                    auth = getAuth(app);
-                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                        try { await signInWithCustomToken(auth, __initial_auth_token); } catch (e) { await signInAnonymously(auth); }
-                    } else { await signInAnonymously(auth); }
-
-                    const user = auth.currentUser;
-                    if (user) {
-                        const appPublicRef = doc(db
+        window
