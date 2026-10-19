@@ -309,9 +309,9 @@
 
     </main>
 
-    <!-- Modals -->
-    <div id="login-modal" class="fixed inset-0 bg-stone-900/80 backdrop-blur-md flex items-center justify-center p-3 z-50">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full overflow-hidden p-5 text-center space-y-4 border border-stone-100">
+  <!-- Login Modal (Role Selection) -->
+    <div id="login-modal" class="fixed inset-0 bg-stone-900/90 backdrop-blur-md flex items-center justify-center p-4 z-[9999]">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full overflow-hidden p-6 text-center space-y-4 border border-stone-100 relative z-[10000]">
             <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mx-auto text-xl shadow-inner">
                 <i class="fa-solid fa-mug-hot"></i>
             </div>
@@ -320,10 +320,10 @@
                 <p class="text-xs text-stone-500 mt-1">Pilih tipe akun untuk mulai masuk</p>
             </div>
             <div class="space-y-2.5">
-                <button onclick="selectRole('employee')" class="w-full py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                <button type="button" onclick="selectRole('employee')" class="w-full py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
                     <i class="fa-solid fa-cash-register text-base"></i> Login Karyawan (Kasir)
                 </button>
-                <button onclick="selectRole('owner')" class="w-full py-3 bg-stone-900 hover:bg-stone-800 text-amber-400 font-semibold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 border border-amber-500/30">
+                <button type="button" onclick="selectRole('owner')" class="w-full py-3 bg-stone-900 hover:bg-stone-800 text-amber-400 font-semibold rounded-2xl text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 border border-amber-500/30 cursor-pointer">
                     <i class="fa-solid fa-shield-halved text-base"></i> Login Owner
                 </button>
             </div>
